@@ -13,8 +13,8 @@ const Routes = () => {
       <Route path="/movie/:id" component={Movie} />\
       <Route path="/reserved/:id" component={Reserved} />
       <Route path="/user" component={User} />;
-      <Route path="*" component={NotFound} />
       <Route exact path="/404" component={NotFound} />
+      <Route path="*" component={NotFound} />
     </Switch>
   );
 };

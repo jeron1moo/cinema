@@ -9,6 +9,7 @@ export default makeStyles(() => ({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: '24px',
   },
   headerDescription: {
     display: 'flex',

@@ -1,10 +1,14 @@
-import { Box, Link } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import React from 'react';
+import { useHistory, useLocation } from 'react-router';
+import Button from '../Button';
 import Typography from '../Typography/Typography';
 import useStyles from './styles';
 
-const Header = ({ className, link }) => {
+const Header = ({ className }) => {
   const classes = useStyles();
+  const { pathname } = useLocation();
+  const history = useHistory();
 
   return (
     <Box className={`${classes.header} ${className || ''}`}>
@@ -18,10 +22,15 @@ const Header = ({ className, link }) => {
             labore.
           </Typography>
         </Box>
-        {link && (
-          <Link className={classes.link} href={link.href}>
-            {link.content}
-          </Link>
+        {pathname !== '/404' && pathname !== '/' && (
+          <Button className={classes.link} onClick={() => history.goBack()}>
+            Go back
+          </Button>
+        )}
+        {pathname === '/404' && (
+          <Button className={classes.link} onClick={() => history.push('/')}>
+            Go to the main page
+          </Button>
         )}
       </Box>
     </Box>

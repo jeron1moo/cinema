@@ -6,17 +6,30 @@ import {
   CardActionArea,
   Chip,
   Box,
+  CircularProgress,
 } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../Button';
 import useStyles from './styles';
 import Typography from '../Typography';
+import { useActions } from '../../hooks/useActions';
 
-const MovieCard = ({
-  className,
-  data: { Title, Poster, Actors, Plot, Genre, Year, Runtime, imdbID },
-}) => {
+const MovieCard = ({ className, id }) => {
   const classes = useStyles();
+  const { getMovie } = useActions();
+  const [data, setData] = useState({});
+  useEffect(async () => {
+    const s = await getMovie(id);
+    setData(s);
+  }, []);
+
+  const { Title, Poster, Actors, Plot, Genre, Year, Runtime, imdbID } = data;
+
+  if (!data) {
+    return <CircularProgress />;
+  }
+
   return (
     <Card className={`${classes.card} ${className || ''}`}>
       <CardMedia className={classes.card_media} image={Poster} title={Title} />
@@ -46,7 +59,9 @@ const MovieCard = ({
           <Typography>{Runtime}</Typography>
         </Box>
         <CardActions>
-          <Button dark>More info...</Button>
+          <Link to={`/movie/${imdbID}`}>
+            <Button dark>More info...</Button>
+          </Link>
         </CardActions>
       </CardActionArea>
     </Card>

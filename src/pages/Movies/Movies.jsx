@@ -1,21 +1,25 @@
 import { Box, CircularProgress } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import Button from '../../components/Button';
 import Card from '../../components/Card';
-import Header from '../../components/Header';
 import Search from '../../components/Search';
 import { useActions } from '../../hooks/useActions';
-
-const link = { href: '#', content: 'Go back' };
+import useStyles from './styles';
+import Typography from '../../components/Typography';
 
 const Movies = () => {
+  const classes = useStyles();
+
   const { getMovies } = useActions();
   const {
     movies: moviesList,
     isLoading,
     err,
   } = useSelector(({ movies }) => movies);
+
+  useEffect(() => {
+    getMovies('Star wars');
+  }, []);
 
   if (isLoading) {
     return <CircularProgress />;
@@ -25,18 +29,26 @@ const Movies = () => {
     return <Box>Error</Box>;
   }
 
-  useEffect(() => {
-    getMovies('Star wars');
-  }, []);
-
   return (
-    <Box>
-      <Header link={link} />
+    <Box className={classes.movies}>
       <Search />
-      {moviesList.map((movie) => (
-        <Card key={movie.imdbID} data={movie} />
-      ))}
-      <Button />
+      <Box className={classes.moviesList}>
+        {moviesList ? (
+          moviesList.map((movie) => (
+            <Card key={movie.imdbID} id={movie.imdbID} />
+          ))
+        ) : (
+          <Box>
+            <Typography className={classes.nothingFound}>
+              Nothing found here
+            </Typography>
+            <Typography className={classes.nothingFound}>
+              Please try another one
+            </Typography>
+            ;
+          </Box>
+        )}
+      </Box>
     </Box>
   );
 };

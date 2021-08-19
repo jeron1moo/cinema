@@ -7,6 +7,7 @@ export default makeStyles(() => ({
     color: '#EEEAEA',
     width: '140px',
     height: '48px',
+    textTransform: 'none',
     '& .MuiButton-label': {
       fontFamily: 'Montserrat',
       fontStyle: 'normal',
