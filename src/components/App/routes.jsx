@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Movie from '../../pages/Movie/Movie';
 import Movies from '../../pages/Movies/Movies';
 import Reserved from '../../pages/Reserved/Reserved';
@@ -10,11 +10,11 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Movies} />
-      <Route path="/movie/:id" component={Movie} />\
-      <Route path="/reserved/:id" component={Reserved} />
-      <Route path="/user" component={User} />;
-      <Route exact path="/404" component={NotFound} />
-      <Route path="*" component={NotFound} />
+      <Route exact path="/movie/:id" component={Movie} />\
+      <Route exact path="/reserved/:id" component={Reserved} />
+      <Route exact path="/user" component={User} />;
+      <Route path="/404" component={NotFound} />
+      <Redirect from="*" to="/404" />;
     </Switch>
   );
 };

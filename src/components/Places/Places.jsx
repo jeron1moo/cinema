@@ -33,7 +33,7 @@ const Places = ({ id }) => {
 
   const checkSeat = (sel, value) => {
     if (!sel) return false;
-    return sel.includes(value);
+    return sel.seats.includes(value);
   };
 
   return (

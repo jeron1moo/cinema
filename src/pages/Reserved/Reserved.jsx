@@ -7,7 +7,7 @@ import useStyles from './styles';
 
 const Reserved = ({ match }) => {
   const classes = useStyles();
-  const { getMovie } = useActions();
+  const { getMovie, setTitle } = useActions();
   const [data, setData] = useState({});
   useEffect(async () => {
     const s = await getMovie(match.params.id);
@@ -20,13 +20,24 @@ const Reserved = ({ match }) => {
 
   const { Title } = data;
 
+  const handleClick = () => {
+    setTitle(match.params.id, Title);
+  };
+
   return (
     <Box className={classes.reserved}>
       <Typography className={classes.reservedTitle}>
         Choose your place
       </Typography>
       <Places id={match.params.id} />
-      <TicketInfo title={Title} id={match.params.id} />
+      <TicketInfo
+        add
+        title={Title}
+        id={match.params.id}
+        titleTickets="Tickets amount"
+        notTicket
+        onClick={() => handleClick()}
+      />
     </Box>
   );
 };

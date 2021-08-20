@@ -30,7 +30,8 @@ export default makeStyles(() => ({
   },
   link: {
     alignSelf: 'flex-start',
-    width: '100px',
+    width: 'auto',
+    minWidth: '100px',
     height: '28px',
     fontFamily: 'Montserrat',
     fontStyle: 'normal',
@@ -42,5 +43,13 @@ export default makeStyles(() => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
+
+    textDecoration: 'none',
+    '&:focus, &:hover, &:visited, &:link, &:active': {
+      textDecoration: 'none',
+    },
+    ' &:hover': {
+      textDecoration: 'underline',
+    },
   },
 }));

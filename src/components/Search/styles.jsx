@@ -11,19 +11,20 @@ export default makeStyles(() => ({
   searchField: {
     width: '840px',
     height: '84px',
-    backgroundColor: '#EAEAEA',
     borderRadius: '5px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'justify',
     borderTopRightRadius: '0',
     borderBottomRightRadius: '0',
+    overflow: 'hidden',
   },
   search: {
     width: '100%',
     fontFamily: 'Montserrat',
-
+    backgroundColor: '#EAEAEA',
     '& .MuiInputBase-root': {
+      borderRadius: '5px 0px 0px 5px',
       height: '168px',
       textAlign: 'center',
       fontFamily: 'Montserrat',
@@ -34,7 +35,6 @@ export default makeStyles(() => ({
     height: '84px',
     maxWidth: '168px',
     fontSize: '24px',
-    borderTopLeftRadius: '0',
-    borderBottomLeftRadius: '0',
+    borderRadius: '0px 5px 5px 0px',
   },
 }));

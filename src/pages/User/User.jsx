@@ -16,7 +16,6 @@ const User = () => {
     setReserved(value);
   };
 
-  console.log('%cuser.jsx line:12 reserved', 'color: #007acc;', reserved);
   return (
     <Box className={classes.user}>
       <Typography className={classes.userTitle}>Your tickets</Typography>
@@ -24,9 +23,11 @@ const User = () => {
         {Object.entries(selected).map((select) => {
           return (
             <TicketInfo
-              key={selected[0]}
+              key={select[0]}
               className={classes.userSelect}
               id={select[0]}
+              titleTickets={select[1].name}
+              reserve
               onClick={() => handleClick(select[0])}
             />
           );
@@ -34,10 +35,14 @@ const User = () => {
       </Box>
       <Box className={classes.reservedTickets}>
         <TicketInfo title="Reserved tickets" className={classes.userSelect}>
-          {Object.entries(reserved).map((reserv) => {
-            console.log('%cuser.jsx line:31 reserv', 'color: #007acc;', reserv);
-            return [];
-          })}
+          {Object.entries(reserved).map((reserv) => (
+            <Box className={classes.movieName} key={`reserved:${reserv[0]}`}>
+              <Typography className={classes.typo}>{reserv[1].name}</Typography>
+              <Typography className={classes.typo}>
+                {reserv[1].seats.length} tickets
+              </Typography>
+            </Box>
+          ))}
         </TicketInfo>
       </Box>
     </Box>

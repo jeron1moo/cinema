@@ -22,6 +22,9 @@ export default makeStyles(() => ({
     marginLeft: '10px',
     justifyContent: 'space-between',
   },
+  movie_description: {
+    textAlign: 'justify',
+  },
   card_media: {
     minWidth: '176px',
     width: '100%',
@@ -136,8 +139,8 @@ export default makeStyles(() => ({
     gap: '36px',
   },
   infobox_text: {
-    fontzize: '24px',
-    lineheight: '29px',
-    fontWeight: 700,
+    fontSize: '24px',
+    lineHeight: '29px',
+    fontWeight: '700',
   },
 }));

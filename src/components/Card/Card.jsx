@@ -1,9 +1,7 @@
 import {
   CardMedia,
   Card,
-  CardActions,
   CardContent,
-  CardActionArea,
   Chip,
   Box,
   CircularProgress,
@@ -26,7 +24,7 @@ const MovieCard = ({ className, id }) => {
 
   const { Title, Poster, Actors, Plot, Genre, Year, Runtime, imdbID } = data;
 
-  if (!data) {
+  if (!data || !Poster) {
     return <CircularProgress />;
   }
 
@@ -34,20 +32,17 @@ const MovieCard = ({ className, id }) => {
     <Card className={`${classes.card} ${className || ''}`}>
       <CardMedia className={classes.card_media} image={Poster} title={Title} />
       <CardContent className={classes.card_content}>
-        <Typography className={classes.movie_title}>{Title}</Typography>
-        <Typography className={classes.movie_actors}>
-          {Actors || 'actor, actor'}
-        </Typography>
-        <Typography className={classes.movie_description}>
-          {Plot || 'Description'}
-        </Typography>
+        <Link to={`/movie/${imdbID}`}>
+          <Typography className={classes.movie_title}>{Title}</Typography>
+        </Link>
+        <Typography className={classes.movie_actors}>{Actors}</Typography>
+        <Typography className={classes.movie_description}>{Plot}</Typography>
       </CardContent>
-      <CardActionArea className={classes.card_actions}>
+      <Box className={classes.card_actions}>
         <Box className={classes.movie_tags}>
           {Genre &&
             Genre.split(',').map((tag) => (
               <Chip
-                clickable
                 key={`${imdbID}:${tag}`}
                 className={classes.movie_tag}
                 label={tag.toLowerCase()}
@@ -58,12 +53,10 @@ const MovieCard = ({ className, id }) => {
           <Typography>{Year}</Typography>
           <Typography>{Runtime}</Typography>
         </Box>
-        <CardActions>
-          <Link to={`/movie/${imdbID}`}>
-            <Button dark>More info...</Button>
-          </Link>
-        </CardActions>
-      </CardActionArea>
+        <Link to={`/movie/${imdbID}`}>
+          <Button dark>More info...</Button>
+        </Link>
+      </Box>
     </Card>
   );
 };

@@ -38,7 +38,7 @@ const MovieCard = ({ className, id }) => {
     imdbRating,
   } = data;
 
-  if (!data) {
+  if (!data || !Poster) {
     return <CircularProgress />;
   }
 

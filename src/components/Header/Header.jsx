@@ -1,7 +1,7 @@
 import { Box } from '@material-ui/core';
 import React from 'react';
 import { useHistory, useLocation } from 'react-router';
-import Button from '../Button';
+import { Link } from 'react-router-dom';
 import Typography from '../Typography/Typography';
 import useStyles from './styles';
 
@@ -17,20 +17,28 @@ const Header = ({ className }) => {
           <Typography className={classes.title} variant="h2" component="h2">
             Welcome to our cinema
           </Typography>
-          <Typography>
+          <Typography variant="h3" component="h3">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita,
             labore.
           </Typography>
         </Box>
         {pathname !== '/404' && pathname !== '/' && (
-          <Button className={classes.link} onClick={() => history.goBack()}>
+          <Link
+            href="/"
+            className={classes.link}
+            onClick={() => history.goBack()}
+          >
             Go back
-          </Button>
+          </Link>
         )}
         {pathname === '/404' && (
-          <Button className={classes.link} onClick={() => history.push('/')}>
+          <Link
+            href="/"
+            className={classes.link}
+            onClick={() => history.push('/')}
+          >
             Go to the main page
-          </Button>
+          </Link>
         )}
       </Box>
     </Box>
