@@ -7,9 +7,6 @@ export default makeStyles((theme) => ({
     padding: '36px 112px',
   },
   userTitle: {
-    fontWeight: 700,
-    fontSize: '24px',
-    lineHeight: '29px',
     marginBottom: '44px',
   },
   userSelect: {
@@ -27,9 +24,8 @@ export default makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  typo: {
-    fontWeight: 700,
-    fontSize: '24px',
-    lineHeight: '29px',
+  ticketsAmount: {
+    minWidth: '150px',
+    textAlign: 'end',
   },
 }));

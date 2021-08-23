@@ -5,7 +5,7 @@ export default makeStyles(() => ({
     backgroundColor: '#2B2243',
     borderRadius: '5px',
     width: '840px',
-    height: '274px',
+    minHeight: '274px',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -16,8 +16,8 @@ export default makeStyles(() => ({
   card_media: {
     minWidth: '176px',
     height: '226px',
-    maxHeight: '214px',
-    backgroundSize: 'contain',
+    backgroundColor: '#C4C4C4',
+    backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
   },
@@ -38,10 +38,6 @@ export default makeStyles(() => ({
     height: '100%',
     justifyContent: 'space-between',
     gap: '24px',
-  },
-  movie_title: {
-    fontWeight: 700,
-    fontSize: '24px',
   },
   movie_tag: {
     backgroundColor: '#000000',
@@ -67,7 +63,6 @@ export default makeStyles(() => ({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: '12px',
-    overflow: 'hidden',
   },
   movie_additional: {
     alignSelf: 'flex-end',
@@ -75,5 +70,8 @@ export default makeStyles(() => ({
     display: 'flex',
     flexDirection: 'column',
     gap: '16px',
+  },
+  movie_description: {
+    overflow: 'ellipsed',
   },
 }));

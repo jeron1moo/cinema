@@ -70,8 +70,8 @@ export default makeStyles(() => ({
     lineHeight: '17px',
   },
   movie_title: {
-    fontWeight: 700,
-    fontSize: '24px',
+    fontWeight: '700 !important',
+    fontSize: '24px !important',
     display: 'flex',
     alignItems: 'center',
     paddingLeft: '10px',
@@ -139,8 +139,8 @@ export default makeStyles(() => ({
     gap: '36px',
   },
   infobox_text: {
-    fontSize: '24px',
     lineHeight: '29px',
-    fontWeight: '700',
+    fontWeight: '700 !important',
+    fontSize: '24px !important',
   },
 }));

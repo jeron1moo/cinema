@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
   ticketInfo: {
     width: '100%',
-    height: 'auto',
+    minHeight: '220px',
     backgroundColor: '#000',
     padding: '24px 12px',
     display: 'flex',
@@ -12,16 +12,19 @@ export default makeStyles(() => ({
   },
   action: {
     alignSelf: 'flex-end',
+  },
+  actionAdd: {
+    alignSelf: 'flex-end',
     alignContent: 'bottom',
+    marginTop: '64px',
   },
   movieName: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  typo: {
-    fontWeight: 700,
-    fontSize: '24px',
-    lineHeight: '29px',
+  ticketsAmount: {
+    minWidth: '150px',
+    textAlign: 'end',
   },
 }));

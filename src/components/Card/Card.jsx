@@ -18,22 +18,28 @@ const MovieCard = ({ className, id }) => {
   const { getMovie } = useActions();
   const [data, setData] = useState({});
   useEffect(async () => {
-    const s = await getMovie(id);
-    setData(s);
+    const movie = await getMovie(id);
+    setData(movie);
   }, []);
 
-  const { Title, Poster, Actors, Plot, Genre, Year, Runtime, imdbID } = data;
-
-  if (!data || !Poster) {
+  if (!data) {
     return <CircularProgress />;
   }
 
+  const { Title, Poster, Actors, Plot, Genre, Year, Runtime, imdbID } = data;
+
   return (
     <Card className={`${classes.card} ${className || ''}`}>
-      <CardMedia className={classes.card_media} image={Poster} title={Title} />
+      {Poster && (
+        <CardMedia
+          className={classes.card_media}
+          image={Poster}
+          title={Title}
+        />
+      )}
       <CardContent className={classes.card_content}>
         <Link to={`/movie/${imdbID}`}>
-          <Typography className={classes.movie_title}>{Title}</Typography>
+          <Typography bold>{Title}</Typography>
         </Link>
         <Typography className={classes.movie_actors}>{Actors}</Typography>
         <Typography className={classes.movie_description}>{Plot}</Typography>

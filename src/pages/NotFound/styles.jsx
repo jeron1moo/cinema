@@ -6,9 +6,6 @@ export default makeStyles((theme) => ({
     height: '80vh',
     backgroundColor: theme.palette.background.main,
     color: '#EEEAEA',
-    fontWeight: 'bold',
-    fontSize: '24px',
-    lineHeight: '29px',
     padding: '36px 112px',
   },
 }));

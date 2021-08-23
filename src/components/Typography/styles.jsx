@@ -10,4 +10,9 @@ export default makeStyles(() => ({
     lineHeight: '17px',
     color: '#EEEAEA',
   },
+  bold: {
+    fontWeight: '700',
+    fontSize: '24px',
+    lineHeight: '29px',
+  },
 }));

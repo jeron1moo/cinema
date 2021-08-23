@@ -1,14 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-  reserved: {
+  nothingFound: {
     width: '100%',
-    height: '100%',
+    height: '80vh',
+    backgroundColor: theme.palette.background.main,
     color: '#EEEAEA',
-    background: theme.palette.background.main,
     padding: '36px 112px',
-  },
-  reservedTitle: {
-    marginBottom: '32px',
   },
 }));

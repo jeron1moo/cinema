@@ -1,6 +1,7 @@
 import { Box, CircularProgress } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router';
 import Card from '../../components/Card';
 import Search from '../../components/Search';
 import { useActions } from '../../hooks/useActions';
@@ -9,7 +10,6 @@ import Typography from '../../components/Typography';
 
 const Movies = () => {
   const classes = useStyles();
-
   const { getMovies } = useActions();
   const {
     movies: moviesList,
@@ -26,7 +26,7 @@ const Movies = () => {
   }
 
   if (err) {
-    return <Box>Error</Box>;
+    return <Redirect to="nothingFound" />;
   }
 
   return (
@@ -39,13 +39,8 @@ const Movies = () => {
           ))
         ) : (
           <Box>
-            <Typography className={classes.nothingFound}>
-              Nothing found here
-            </Typography>
-            <Typography className={classes.nothingFound}>
-              Please try another one
-            </Typography>
-            ;
+            <Typography bold>Nothing found here</Typography>
+            <Typography bold>Please try another one</Typography>
           </Box>
         )}
       </Box>

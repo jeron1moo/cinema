@@ -41,27 +41,28 @@ const TicketInfo = ({
     <Box className={`${classes.ticketInfo} ${className || ''} `}>
       {title && (
         <Box className={classes.movieName}>
-          <Typography className={classes.typo}>{title}</Typography>
-          <Typography className={classes.typo}>{name}</Typography>
+          <Typography bold>{title}</Typography>
+          <Typography bold>{name}</Typography>
         </Box>
       )}
       {!children && (
         <>
           <Box className={classes.movieName}>
-            <Typography className={classes.typo}>{titleTickets}</Typography>
-            <Typography className={classes.typo}>
-              {selected && selected.seats.length} {!notTicket && 'tickets'}
+            <Typography bold>{titleTickets}</Typography>
+            <Typography bold className={classes.ticketsAmount}>
+              {(selected && selected.seats.length) || '0'}{' '}
+              {!notTicket && 'tickets'}
             </Typography>
           </Box>
           <Box className={classes.movieName}>
-            <Typography className={classes.typo}>Total cost</Typography>
-            <Typography className={classes.typo}>{countSum()}$</Typography>
+            <Typography bold>Total cost</Typography>
+            <Typography bold>{countSum()}$</Typography>
           </Box>
         </>
       )}
       {children}
       {add && (
-        <Link to="/user" className={classes.action}>
+        <Link to="/user" className={classes.actionAdd}>
           <Button onClick={onClick}>Add</Button>
         </Link>
       )}

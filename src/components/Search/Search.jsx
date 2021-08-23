@@ -8,12 +8,19 @@ const MovieSearch = ({ className }) => {
   const classes = useStyles();
   const { getMovies } = useActions();
   const [value, setValue] = useState('');
+
   const handleClick = () => {
-    getMovies(value);
+    if (value) getMovies(value);
   };
 
   const handleChange = (event) => {
     setValue(event.target.value);
+  };
+
+  const onEnterKey = (e) => {
+    if (e.key === 'Enter') {
+      handleClick();
+    }
   };
 
   return (
@@ -24,6 +31,7 @@ const MovieSearch = ({ className }) => {
         className={classes.search}
         value={value}
         onChange={handleChange}
+        onKeyDown={onEnterKey}
       />
       <Button onClick={handleClick} className={classes.button}>
         Search

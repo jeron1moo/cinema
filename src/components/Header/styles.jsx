@@ -23,11 +23,7 @@ export default makeStyles(() => ({
     gap: '36px',
     flexDirection: 'column',
   },
-  title: {
-    fontSize: '24px',
-    lineHeight: '28px',
-    fontWeight: 700,
-  },
+
   link: {
     alignSelf: 'flex-start',
     width: 'auto',

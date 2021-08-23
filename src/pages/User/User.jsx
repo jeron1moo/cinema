@@ -18,7 +18,9 @@ const User = () => {
 
   return (
     <Box className={classes.user}>
-      <Typography className={classes.userTitle}>Your tickets</Typography>
+      <Typography bold className={classes.userTitle}>
+        Your tickets
+      </Typography>
       <Box className={classes.ticketsList}>
         {Object.entries(selected).map((select) => {
           return (
@@ -37,8 +39,8 @@ const User = () => {
         <TicketInfo title="Reserved tickets" className={classes.userSelect}>
           {Object.entries(reserved).map((reserv) => (
             <Box className={classes.movieName} key={`reserved:${reserv[0]}`}>
-              <Typography className={classes.typo}>{reserv[1].name}</Typography>
-              <Typography className={classes.typo}>
+              <Typography bold>{reserv[1].name}</Typography>
+              <Typography bold className={classes.ticketsAmount}>
                 {reserv[1].seats.length} tickets
               </Typography>
             </Box>

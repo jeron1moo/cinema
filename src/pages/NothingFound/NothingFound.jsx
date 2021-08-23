@@ -3,14 +3,15 @@ import React from 'react';
 import Typography from '../../components/Typography';
 import useStyles from './styles';
 
-const NotFound = () => {
+const NothingFound = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.notFound}>
-      <Typography bold>Page not found </Typography>
+    <Box className={classes.nothingFound}>
+      <Typography bold>Ooopss...</Typography>
+      <Typography bold>Something went wrong</Typography>
     </Box>
   );
 };
 
-export default NotFound;
+export default NothingFound;

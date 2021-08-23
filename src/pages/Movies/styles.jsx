@@ -9,10 +9,6 @@ export default makeStyles(() => ({
     display: 'flex',
     flexDirection: 'column',
     gap: '32px',
-  },
-  nothingFound: {
-    fontWeight: 'bold',
-    fontSize: '24px',
-    lineHeight: '29px',
+    marginBottom: '100px',
   },
 }));

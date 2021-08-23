@@ -6,7 +6,7 @@ import {
   Box,
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import useStyles from './styles';
 import Typography from '../Typography';
 import { useActions } from '../../hooks/useActions';
@@ -38,7 +38,15 @@ const MovieCard = ({ className, id }) => {
     imdbRating,
   } = data;
 
-  if (!data || !Poster) {
+  if (!data) {
+    return <CircularProgress />;
+  }
+
+  if (data.Response === 'False') {
+    return <Redirect to="/nothingFound" />;
+  }
+
+  if (!Poster) {
     return <CircularProgress />;
   }
 
