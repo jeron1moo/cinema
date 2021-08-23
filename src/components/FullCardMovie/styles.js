@@ -11,7 +11,7 @@ export default makeStyles(() => ({
     alignItems: 'center',
     justifyContent: 'justify',
     padding: '30px 24px',
-    gap: '28px',
+    gap: '24px',
     '& .MuiCardActions-root': {
       padding: 0,
     },
@@ -42,7 +42,7 @@ export default makeStyles(() => ({
     flexDirection: 'row',
     gap: '18px',
     padding: '0px',
-    paddingTop: '10px',
+    paddingBottom: 0,
   },
   card_actions: {
     display: 'flex',
@@ -70,15 +70,13 @@ export default makeStyles(() => ({
     lineHeight: '17px',
   },
   movie_title: {
-    fontWeight: '700 !important',
-    fontSize: '24px !important',
     display: 'flex',
     alignItems: 'center',
     paddingLeft: '10px',
     color: 'white',
     backgroundColor: 'rgba(43, 34, 67, 0.8)',
     width: '454px',
-    height: '58px',
+    height: 'auto',
   },
   movie_tag: {
     backgroundColor: '#000000',
@@ -131,7 +129,7 @@ export default makeStyles(() => ({
   },
   infobox: {
     background: '#000',
-    width: '100%',
+    width: '95%',
     height: '100%',
     padding: '46px',
     display: 'flex',
