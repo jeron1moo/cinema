@@ -8,7 +8,7 @@ import {
 const initialState = {
   movies: [],
   isLoading: false,
-  err: null,
+  error: null,
 };
 
 export default produce((state, { type, payload }) => {

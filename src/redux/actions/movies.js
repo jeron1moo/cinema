@@ -37,7 +37,7 @@ export const getMovie = (id) => async (dispatch) => {
     return data;
   } catch (err) {
     dispatch(loadMoviesFailure(err.message));
-    return err.message;
+    return { Response: 'False' };
   }
 };
 

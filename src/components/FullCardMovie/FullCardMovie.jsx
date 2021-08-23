@@ -17,8 +17,8 @@ const MovieCard = ({ className, id }) => {
   const { getMovie } = useActions();
   const [data, setData] = useState({});
   useEffect(async () => {
-    const s = await getMovie(id);
-    setData(s);
+    const movie = await getMovie(id);
+    setData(movie);
   }, []);
 
   const {

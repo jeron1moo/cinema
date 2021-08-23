@@ -14,7 +14,7 @@ const Movies = () => {
   const {
     movies: moviesList,
     isLoading,
-    err,
+    error,
   } = useSelector(({ movies }) => movies);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Movies = () => {
     return <CircularProgress />;
   }
 
-  if (err) {
+  if (error) {
     return <Redirect to="nothingFound" />;
   }
 
