@@ -54,18 +54,16 @@ const MovieCard = ({ className, id }) => {
     <Card className={`${classes.card} ${className || ''}`}>
       <CardMedia className={classes.card_media} image={Poster} title={Title}>
         <Box className={classes.movie}>
-          <Typography className={classes.movie_title}>{Title}</Typography>
+          <Typography bold className={classes.movie_title}>
+            {Title}
+          </Typography>
           <Link to={`/reserved/${id}`}>
             <Button>Buy a ticket</Button>
           </Link>
         </Box>
         <Box className={classes.metarate}>
-          <Typography className={classes.metascore}>
-            Metascore: {Metascore}
-          </Typography>
-          <Typography className={classes.rating}>
-            Imdb rating: {imdbRating}
-          </Typography>
+          <Typography>Metascore: {Metascore}</Typography>
+          <Typography>Imdb rating: {imdbRating}</Typography>
         </Box>
       </CardMedia>
       <CardContent className={classes.card_content}>
@@ -73,33 +71,15 @@ const MovieCard = ({ className, id }) => {
           <Typography>Description: </Typography>
           <Typography className={classes.movie_description}>{Plot}</Typography>
           <Box className={classes.infobox}>
-            <Typography className={classes.infobox_text}>
-              Country: {Country}
-            </Typography>
-            <Typography className={classes.infobox_text}>
-              Awards: {Awards}
-            </Typography>
-            <Typography className={classes.infobox_text}>
-              Actors: {Actors}
-            </Typography>
-            <Typography className={classes.infobox_text}>
-              Year: {Year}
-            </Typography>
-            <Typography className={classes.infobox_text}>
-              Director: {Director}
-            </Typography>
-            <Typography className={classes.infobox_text}>
-              Genre: {Genre}
-            </Typography>
-            <Typography className={classes.infobox_text}>
-              Language: {Language}
-            </Typography>
-            <Typography className={classes.infobox_text}>
-              Box office: {BoxOffice}
-            </Typography>
-            <Typography className={classes.infobox_text}>
-              Release: {Released}
-            </Typography>
+            <Typography bold>Country: {Country}</Typography>
+            <Typography bold>Awards: {Awards}</Typography>
+            <Typography bold>Actors: {Actors}</Typography>
+            <Typography bold>Year: {Year}</Typography>
+            <Typography bold>Director: {Director}</Typography>
+            <Typography bold>Genre: {Genre}</Typography>
+            <Typography bold>Language: {Language}</Typography>
+            <Typography bold>Box office: {BoxOffice}</Typography>
+            <Typography bold>Release: {Released}</Typography>
           </Box>
         </Box>
         <Box className={classes.movie_images}>

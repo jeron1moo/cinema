@@ -8,7 +8,7 @@ const NotFound = () => {
 
   return (
     <Box className={classes.notFound}>
-      <Typography bold>Page not found </Typography>
+      <Typography bold>Page not found</Typography>
     </Box>
   );
 };

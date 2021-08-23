@@ -6,6 +6,14 @@ import Button from '../Button';
 import Typography from '../Typography';
 import useStyles from './styles';
 
+const counts = {
+  A: 8,
+  B: 10,
+  C: 10,
+  D: 10,
+  E: 14,
+};
+
 const TicketInfo = ({
   id,
   title,
@@ -20,14 +28,6 @@ const TicketInfo = ({
 }) => {
   const classes = useStyles();
   const selected = useSelector((state) => state.seats.selected[id]);
-
-  const counts = {
-    A: 8,
-    B: 10,
-    C: 10,
-    D: 10,
-    E: 14,
-  };
 
   const countSum = () => {
     if (!selected) return 0;
@@ -50,8 +50,8 @@ const TicketInfo = ({
           <Box className={classes.movieName}>
             <Typography bold>{titleTickets}</Typography>
             <Typography bold className={classes.ticketsAmount}>
-              {(selected && selected.seats.length) || '0'}{' '}
-              {!notTicket && 'tickets'}
+              {(selected && selected.seats.length) || '0'}
+              {!notTicket && ' tickets'}
             </Typography>
           </Box>
           <Box className={classes.movieName}>

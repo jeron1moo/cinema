@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box } from '@material-ui/core';
 import useStyles from './styles';
 
 const Seat = ({ onClick, select, reserve }) => {
   const classes = useStyles();
-  const [color, setColor] = useState(false);
 
   return (
     <>
@@ -12,7 +11,6 @@ const Seat = ({ onClick, select, reserve }) => {
         className={`${classes.seat} ${classes.avaiable} ${
           select === true && classes.checked
         } ${reserve === true && classes.reserved}`}
-        onChange={() => setColor(!color)}
         onClick={onClick}
       />
     </>

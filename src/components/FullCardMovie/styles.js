@@ -121,7 +121,7 @@ export default makeStyles(() => ({
   },
   movie_image: {
     width: '178px',
-    height: '226px',
+    height: 'auto',
   },
   infodescription: {
     width: '388px',
@@ -137,10 +137,5 @@ export default makeStyles(() => ({
     display: 'flex',
     flexDirection: 'column',
     gap: '36px',
-  },
-  infobox_text: {
-    lineHeight: '29px',
-    fontWeight: '700 !important',
-    fontSize: '24px !important',
   },
 }));

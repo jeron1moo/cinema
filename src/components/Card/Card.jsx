@@ -39,7 +39,9 @@ const MovieCard = ({ className, id }) => {
       )}
       <CardContent className={classes.card_content}>
         <Link to={`/movie/${imdbID}`}>
-          <Typography bold>{Title}</Typography>
+          <Typography bold className={classes.link}>
+            {Title}
+          </Typography>
         </Link>
         <Typography className={classes.movie_actors}>{Actors}</Typography>
         <Typography className={classes.movie_description}>{Plot}</Typography>

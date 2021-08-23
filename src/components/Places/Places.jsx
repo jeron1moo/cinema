@@ -5,27 +5,27 @@ import { useActions } from '../../hooks/useActions';
 import Seat from '../Seat';
 import useStyles from './styles';
 
+const seatsColumns = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+];
+const seatsRows = ['A', 'B', 'C', 'D', 'E'];
+
 const Places = ({ id }) => {
   const classes = useStyles();
   const { setSeat } = useActions();
   const selected = useSelector((state) => state.seats.selected[id]);
   const reserved = useSelector((state) => state.seats.reserved[id]);
-
-  const seatsColumns = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-    '11',
-    '12',
-  ];
-  const seatsRows = ['A', 'B', 'C', 'D', 'E'];
 
   const handleClick = (column, row) => {
     setSeat(column + row, id);
@@ -38,9 +38,9 @@ const Places = ({ id }) => {
 
   return (
     <Table className={classes.table}>
-      <TableBody className={classes.tableBody}>
+      <TableBody>
         {seatsRows.map((row) => (
-          <TableRow className={classes.tableRow} key={row}>
+          <TableRow key={row}>
             {seatsColumns.map((column) => (
               <TableCell className={classes.tableCell} key={column + row}>
                 <Seat

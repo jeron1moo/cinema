@@ -74,4 +74,9 @@ export default makeStyles(() => ({
   movie_description: {
     overflow: 'ellipsed',
   },
+  link: {
+    '&:hover': {
+      textDecoration: 'underline',
+    },
+  },
 }));

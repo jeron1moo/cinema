@@ -29,9 +29,11 @@ export const getMovie = (id) => async (dispatch) => {
     dispatch(loading());
 
     const { data } = await axios.get(`${MOVIE_URL}${id}`);
+
     if (data.Reponse === 'False') {
       dispatch(loadMoviesFailure(data.error));
     }
+
     return data;
   } catch (err) {
     dispatch(loadMoviesFailure(err.message));

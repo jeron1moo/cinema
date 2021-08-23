@@ -11,9 +11,10 @@ const Reserved = ({ match }) => {
   const classes = useStyles();
   const { getMovie, setTitle } = useActions();
   const [data, setData] = useState();
+
   useEffect(async () => {
-    const s = await getMovie(match.params.id);
-    setData(s);
+    const movie = await getMovie(match.params.id);
+    setData(movie);
   }, []);
 
   if (!data) {

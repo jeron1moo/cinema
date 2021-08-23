@@ -2,9 +2,9 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Movie from '../../pages/Movie/Movie';
 import Movies from '../../pages/Movies/Movies';
-import Reserved from '../../pages/Reserved/Reserved';
-import User from '../../pages/User/User';
-import NotFound from '../../pages/NotFound/NotFound';
+import Reserved from '../../pages/Reserved';
+import User from '../../pages/User';
+import NotFound from '../../pages/NotFound';
 import NothingFound from '../../pages/NothingFound';
 
 const Routes = () => {

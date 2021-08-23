@@ -3,9 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
   '@global': {
     '.MuiInputLabel-outlined': {
-      transform: 'translate(20px, 35px) scale(1)',
+      transform: 'translate(20px, 30px) scale(1)',
       zIndex: 1,
       fontFamily: 'Montserrat',
+      fontWeight: '400',
+      fontSize: '24px',
+      lineHeight: '29px',
+      color: '#000',
     },
   },
   searchField: {
@@ -18,16 +22,21 @@ export default makeStyles(() => ({
     borderTopRightRadius: '0',
     borderBottomRightRadius: '0',
     overflow: 'hidden',
+    '& .MuiInputLabel-outlined.MuiInputLabel-shrink': {
+      display: 'none',
+    },
   },
   search: {
     width: '100%',
-    fontFamily: 'Montserrat',
     backgroundColor: '#EAEAEA',
     '& .MuiInputBase-root': {
       borderRadius: '5px 0px 0px 5px',
       height: '168px',
-      textAlign: 'center',
       fontFamily: 'Montserrat',
+      fontWeight: '400',
+      fontSize: '24px',
+      lineHeight: '29px',
+      color: '#000',
     },
   },
   button: {
