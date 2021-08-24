@@ -11,3 +11,8 @@ https://drive.google.com/file/d/1kSPLeA-q-fhiL3D784wR_tgvq04WjObQ/view?usp=shari
 ## Movie API
 
 http://www.omdbapi.com/
+
+## run
+
+### set manual env key 
+  REACT_APP_API_KEY=abcdev npm run start

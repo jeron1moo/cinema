@@ -1,0 +1,16 @@
+import { SET_SEAT, SET_RESERVED, SET_TITLE } from '../constants/seats';
+
+export const setSeat = (seat, id) => ({
+  type: SET_SEAT,
+  payload: { seat, id },
+});
+
+export const setReserved = (id) => ({
+  type: SET_RESERVED,
+  payload: { id },
+});
+
+export const setTitle = (id, title) => ({
+  type: SET_TITLE,
+  payload: { id, title },
+});

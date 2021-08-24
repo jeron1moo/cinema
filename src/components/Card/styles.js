@@ -1,0 +1,82 @@
+import { makeStyles } from '@material-ui/core/styles';
+
+export default makeStyles(() => ({
+  card: {
+    backgroundColor: '#2B2243',
+    borderRadius: '5px',
+    width: '840px',
+    minHeight: '274px',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'justify',
+    padding: '24px',
+    gap: '28px',
+  },
+  card_media: {
+    minWidth: '176px',
+    height: '226px',
+    backgroundColor: '#C4C4C4',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  },
+  card_content: {
+    alignSelf: 'flex-start',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '18px',
+    padding: '0px',
+    paddingTop: '10px',
+  },
+  card_actions: {
+    display: 'flex',
+    flexDirection: 'column',
+    maxWidth: '140px',
+    width: '140px',
+    height: '100%',
+    justifyContent: 'space-between',
+    gap: '24px',
+  },
+  movie_tag: {
+    backgroundColor: '#000000',
+    borderRadius: '5px',
+    fontFamily: 'Montserrat',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: '10px',
+    lineHeight: '12px',
+    letterSpacing: '-2%',
+    color: '#EEEAEA',
+    height: '25px',
+    maxWeight: '32px',
+    '& .MuiChip-label': {
+      maxWeight: '32px',
+      overflow: 'hidden',
+      padding: '0 8px',
+    },
+  },
+  movie_tags: {
+    alignSelf: 'flex-start',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: '12px',
+  },
+  movie_additional: {
+    alignSelf: 'flex-end',
+    widht: '72px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
+  },
+  movie_description: {
+    overflow: 'ellipsed',
+  },
+  link: {
+    '&:hover': {
+      textDecoration: 'underline',
+    },
+  },
+}));
