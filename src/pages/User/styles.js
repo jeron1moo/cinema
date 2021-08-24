@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles((theme) => ({
+export default makeStyles(() => ({
   user: {
     width: '100%',
-    backgroundColor: theme.palette.background.main,
+    backgroundColor: '#2B2243',
     padding: '36px 112px',
   },
   userTitle: {

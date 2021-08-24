@@ -10,7 +10,9 @@ const MovieSearch = ({ className }) => {
   const [value, setValue] = useState('');
 
   const handleClick = () => {
-    if (value) getMovies(value);
+    if (value) {
+      getMovies(value);
+    }
   };
 
   const handleChange = (event) => {

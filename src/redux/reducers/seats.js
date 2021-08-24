@@ -26,7 +26,7 @@ export default produce((state, { type, payload }) => {
           (select) => select === payload.seat,
         );
         if (index !== -1) {
-          // if SEAT is in SELECTED list then remove it from this list
+          // if SEAT is in SELECTED list then remove seat from this list
           state.selected[payload.id]?.seats.splice(index, 1);
           break;
         }

@@ -6,14 +6,12 @@ const Seat = ({ onClick, select, reserve }) => {
   const classes = useStyles();
 
   return (
-    <>
-      <Box
-        className={`${classes.seat} ${classes.avaiable} ${
-          select === true && classes.checked
-        } ${reserve === true && classes.reserved}`}
-        onClick={onClick}
-      />
-    </>
+    <Box
+      className={`${classes.seat} ${classes.avaiable} ${
+        select && classes.checked
+      } ${reserve && classes.reserved}`}
+      onClick={onClick}
+    />
   );
 };
 

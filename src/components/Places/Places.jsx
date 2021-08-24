@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useActions } from '../../hooks/useActions';
 import Seat from '../Seat';
 import useStyles from './styles';
+import checkSeat from '../../helper';
 
 const seatsColumns = [
   '1',
@@ -29,11 +30,6 @@ const Places = ({ id }) => {
 
   const handleClick = (column, row) => {
     setSeat(column + row, id);
-  };
-
-  const checkSeat = (sel, value) => {
-    if (!sel) return false;
-    return sel.seats.includes(value);
   };
 
   return (

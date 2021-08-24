@@ -39,10 +39,10 @@ const Reserved = ({ match }) => {
       <Places id={match.params.id} />
       <TicketInfo
         add
+        notTicket
         title={Title}
         id={match.params.id}
         titleTickets="Tickets amount"
-        notTicket
         onClick={() => handleClick()}
       />
     </Box>
