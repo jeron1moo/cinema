@@ -12,7 +12,6 @@ https://drive.google.com/file/d/1kSPLeA-q-fhiL3D784wR_tgvq04WjObQ/view?usp=shari
 
 http://www.omdbapi.com/
 
-
 ## run
 
 ### set manual env key 
